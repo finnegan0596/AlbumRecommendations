@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace AlbumScraper.Models
+﻿namespace AlbumScraper.Models
 {
     public class Album
     {
@@ -9,6 +7,8 @@ namespace AlbumScraper.Models
         public string Artist { get; set; }
 
         public string SpotifyUrl { get; set; }
+
+        public int Year { get; set; }
 
         public int Score { get; set; }
 

@@ -2,7 +2,6 @@
 using AlbumScraper.Models;
 using HtmlAgilityPack;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +13,7 @@ namespace AlbumScraper.Scrapers
         public static ICollection<Album> GetAlbums(string baseUrl, int year, int startPage, int endPage)
         {
             var results = new List<Album>();
-            
+
             HtmlWeb website = new HtmlWeb();
             website.AutoDetectEncoding = false;
             website.OverrideEncoding = Encoding.Default;
@@ -28,8 +27,6 @@ namespace AlbumScraper.Scrapers
                                                     .Where(d => d.Attributes.Contains("class") &&
                                                                 d.Attributes["class"].Value.Contains("albumListRow")))
                 {
-
-
                     var artistAndTitle = row.GetInnerTextFromAttribute("itemprop", "url");
                     var genre = row.GetInnerTextForClass("albumListGenre");
                     var score = row.GetInnerTextForClass("scoreValue");
@@ -43,6 +40,7 @@ namespace AlbumScraper.Scrapers
                         Title = splitArtistAndTitle.Skip(1).First(),
                         Genre = genre,
                         Score = Int32.Parse(score),
+                        Year = year,
                         SpotifyUrl = spotifyUrl
                     });
                 }

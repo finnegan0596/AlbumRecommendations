@@ -1,5 +1,4 @@
 ﻿using HtmlAgilityPack;
-using System;
 using System.Linq;
 
 namespace AlbumScraper.Common.Extensions
