@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "AlbumScraper": {
+      "commandName": "Project",
+      "commandLineArgs": "https://www.albumoftheyear.org/ratings/1-pitchfork-highest-rated 2020 1 38 C:\\\\Users\\\\martin\\\\Desktop\\\\2020.json"
+    }
+  }
+}
