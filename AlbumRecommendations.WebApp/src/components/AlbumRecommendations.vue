@@ -1,0 +1,118 @@
+<template>
+<div class="albumContainer">
+  <div class="row">
+    <hgroup class="headings">
+      <h2 class="artist">{{album.artist}}</h2>
+      <h1 class="title">{{album.title}}</h1>
+    </hgroup>
+    <div class="spotify">
+      <iframe frameborder="0" width="100%;" height="100%;" allowtransparency="true" allow="encrypted-media" :src='album.spotifyUrl'></iframe>
+    </div>
+    <div class="scoreBox">
+
+      <span class="score">
+        {{album.score}}
+      </span>
+    </div>
+  </div>
+</div>
+</template>
+
+<script>
+export default {
+  name: 'AlbumRecommendations',
+  props: {
+    album: {
+      type: Object
+    }
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+#app {
+  background-color: #f7f7f7;
+}
+
+.albumContainer {
+  background: #fff;
+  padding: 20px 0 40px;
+  margin-top: 2%;
+  margin-left: 20%;
+  margin-right: 20%;
+  position: relative;
+}
+
+.row {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  margin-left: -20px;
+  margin-right: -20px;
+  box-sizing: border-box;
+}
+
+.headings {
+  position: relative;
+  min-height: 1px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-right: 20px;
+  text-align: center;
+  color: #1a1a1a;
+  padding-left: 60px;
+  width: 50%;
+  display: block;
+}
+
+.artist {
+  font-family: Walfork, Walsheim, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 175%;
+  bottom: .25em;
+  font-weight: 400;
+  padding-right: 20px;
+}
+
+.title {
+  font-family: Tiempos Headline, Tiempos, Georgia, serif;
+  font-size: 250%;
+  line-height: 1.25;
+  font-weight: 700;
+  font-style: italic;
+  margin: 0;
+}
+
+
+.spotify {
+  margin-left: 0%;
+  float: left;
+  width: 20rem;
+  height: 20rem;
+  min-height: 1px;
+  position: relative;
+}
+
+.scoreBox {
+  position: relative;
+  min-height: 1px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  margin-left: 2%;
+  margin-right: 3%;
+}
+
+.score {
+  border-radius: 5rem;
+  width: 5rem;
+  height: 5rem;
+  padding: 2rem;
+  background: white;
+  border: .75rem solid black;
+  text-align: center;
+  color: black;
+  font-size: 3rem;
+  font-weight: 700;
+}
+</style>

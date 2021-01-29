@@ -9,9 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlbumRecommendations.Models
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlbumRecommendations.Common", "AlbumScraper.Common\AlbumRecommendations.Common.csproj", "{5001426A-4146-43E3-81AA-49E5DB1EA94E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbumRecommendations.WebApi", "AlbumRecommendations.WebApi\AlbumRecommendations.WebApi.csproj", "{4E0297E3-2729-4ABC-B1C4-19C3D7FAA7E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlbumRecommendations.WebApi", "AlbumRecommendations.WebApi\AlbumRecommendations.WebApi.csproj", "{4E0297E3-2729-4ABC-B1C4-19C3D7FAA7E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbumRecommendations.Repositories", "AlbumRecommendations.Repositories\AlbumRecommendations.Repositories.csproj", "{D6BDA181-4FE1-493D-A5D7-AC218FC3C43B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlbumRecommendations.Repositories", "AlbumRecommendations.Repositories\AlbumRecommendations.Repositories.csproj", "{D6BDA181-4FE1-493D-A5D7-AC218FC3C43B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{82045829-D10C-47DE-BFCE-379767907ECF}"
 	ProjectSection(SolutionItems) = preProject
