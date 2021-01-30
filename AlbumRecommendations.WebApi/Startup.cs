@@ -38,10 +38,13 @@ namespace AlbumRecommendations.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseCors(
-                options => options.WithOrigins("http://localhost:8080").AllowAnyMethod()
-                );
-
+            foreach (var url in Configuration.GetValue<string>("PermittedCorsUrls")
+                                             .Split(';'))
+            {
+                app.UseCors(
+                  options => options.WithOrigins(url).AllowAnyMethod()
+                  );
+            }
             app.UseHttpsRedirection();
 
             app.UseRouting();
