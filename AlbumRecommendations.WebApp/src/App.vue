@@ -1,37 +1,25 @@
 <template>
-  <br>
-<img class="logo" alt="Vue logo" src="./assets/pitchfork.png">
+<img class="logo" alt="Pitchfork logo" src="./assets/pitchfork.png">
 <div class="page">
   <br>
   <h1>Pitchfork Recommends:</h1>
-  <AlbumRecommendations :album='album' />
+  <AlbumRecommendations/>
 </div>
 </template>
 
 <script>
 import AlbumRecommendations from './components/AlbumRecommendations.vue'
+
 export default {
   name: 'App',
   components: {
     AlbumRecommendations
-  },
-  data() {
-    return {
-      album: {
-        title: 'To Pimp a Butterfly',
-        artist: 'Kendrick Lamar',
-        spotifyUrl: "http://open.spotify.com/embed/album/7ycBtnsMtyVbbwTfJwRjSP",
-        year: 2015,
-        score: 93,
-        genre: 'Hip Hop'
-      }
-    }
   }
 }
 </script>
 
 <style>
-*{
+* {
   margin: 0px;
 }
 

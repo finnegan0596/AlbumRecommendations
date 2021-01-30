@@ -2,16 +2,16 @@
 <div class="albumContainer">
   <div class="row">
     <hgroup class="headings">
-      <h2 class="artist">{{album.artist}}</h2>
-      <h1 class="title">{{album.title}}</h1>
+      <h2 class="artist">{{album?.artist}}</h2>
+      <h1 class="title">{{album?.title}}</h1>
     </hgroup>
     <div class="spotify">
-      <iframe frameborder="0" width="100%;" height="100%;" allowtransparency="true" allow="encrypted-media" :src='album.spotifyUrl'></iframe>
+      <iframe frameborder="0" width="100%;" height="100%;" allowtransparency="true" allow="encrypted-media" :src='album?.spotifyUrl'></iframe>
     </div>
     <div class="scoreBox">
 
       <span class="score">
-        {{album.score}}
+        {{album?.score}}
       </span>
     </div>
   </div>
@@ -19,14 +19,26 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
-  name: 'AlbumRecommendations',
-  props: {
-    album: {
-      type: Object
-    }
+    name:"AlbumRecommendations",
+    data()
+    {
+      return {album:null}
+    },
+    created() {
+      axios.get('https://localhost:44371/albums/suggestion?maxYear=2011&minYear=2013&minScore=85')
+     .then(response => {
+       this.album = response.data
+     })
+     .catch(e => {
+       this.errors.push(e)
+     })
+
   }
-}
+  }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

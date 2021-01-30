@@ -1,4 +1,5 @@
 ﻿using AlbumRecommendations.Repositories.Contracts;
+using AlbumScraper.Common.Extensions;
 using AlbumScraper.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
@@ -39,6 +40,22 @@ namespace AlbumRecommendations.Repositories
             results = results.Where(r => r.Title.Contains((title ?? string.Empty), System.StringComparison.InvariantCultureIgnoreCase));
 
             return results.ToList();
+        }
+
+        public Album GetSuggestedAlbum(int? minScore, int? maxScore, int? minYear, int? maxYear)
+        {
+            var results = this.GetAlbums().AsEnumerable();
+            if (minYear.HasValue)
+                results = results.Where(r => r.Year <= minYear.Value);
+            if (maxYear.HasValue)
+                results = results.Where(r => r.Year >= maxYear.Value);
+            if (minScore.HasValue)
+                results = results.Where(r => r.Score >= minScore);
+            if (maxScore.HasValue)
+                results = results.Where(r => r.Score <= maxScore);
+
+
+            return results?.Random();
         }
     }
 }

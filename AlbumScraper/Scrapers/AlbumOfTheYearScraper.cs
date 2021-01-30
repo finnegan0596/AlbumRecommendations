@@ -31,17 +31,20 @@ namespace AlbumScraper.Scrapers
                     var genre = row.GetInnerTextForClass("albumListGenre");
                     var score = row.GetInnerTextForClass("scoreValue");
                     var spotifyUrl = row.GetLinkFromAttribute("data-track-action", "Spotify");
+                    var rank = Int32.Parse(row.GetInnerTextFromAttribute("itemprop", "position"));
 
                     var splitArtistAndTitle = artistAndTitle.Split(" - ");
 
                     results.Add(new Album
                     {
+                        Id = (year * 100000) + rank, 
+                        Rank = rank,
                         Artist = splitArtistAndTitle.First(),
                         Title = splitArtistAndTitle.Skip(1).First(),
                         Genre = genre,
                         Score = Int32.Parse(score),
                         Year = year,
-                        SpotifyUrl = spotifyUrl
+                        SpotifyUrl = spotifyUrl?.Replace("http://open.spotify.com/album/", "http://open.spotify.com/embed/album/") // bit hacky :(
                     });
                 }
 

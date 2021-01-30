@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AlbumScraper.Common\AlbumRecommendations.Common.csproj" />
     <ProjectReference Include="..\AlbumScraper.Models\AlbumRecommendations.Models.csproj" />
   </ItemGroup>
 
