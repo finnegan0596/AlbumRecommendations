@@ -1,47 +1,67 @@
 <template>
 <div class="albumContainer">
-  <div class="row">
+  <div v-if="!loading" class="row">
     <hgroup class="headings">
       <h2 class="artist">{{album?.artist}}</h2>
       <h1 class="title">{{album?.title}}</h1>
     </hgroup>
-    <div class="spotify">
+    <div v-if="album.spotifyUrl != null" class="spotify">
       <iframe frameborder="0" width="100%;" height="100%;" allowtransparency="true" allow="encrypted-media" :src='album?.spotifyUrl'></iframe>
     </div>
+    <div v-else class="notOnSpotify">
+      Not on Spotify
+    </div>
     <div class="scoreBox">
-
       <span class="score">
         {{album?.score}}
       </span>
     </div>
+  </div>
+  <div v-else class="spinnerContainer">
+    <Circle4/>
   </div>
 </div>
 </template>
 
 <script>
 import axios from 'axios';
+import {
+  Circle4
+} from 'vue-loading-spinner';
 
 export default {
-    name:"AlbumRecommendations",
-    data()
-    {
-      return {album:null}
-    },
-    created() {
+  name: "AlbumRecommendations",
+  components: {
+    Circle4
+  },
+  data() {
+    return {
+      album: null,
+      loading: true
+
+    }
+  },
+  created() {
+    setTimeout(() => {
+      this.getAlbum()
+    }, 2000);
+  },
+
+  methods: {
+    getAlbum: function() {
       axios.get('https://localhost:44371/albums/suggestion?maxYear=2011&minYear=2013&minScore=85')
-     .then(response => {
-       this.album = response.data
-     })
-     .catch(e => {
-       this.errors.push(e)
-     })
-
+        .then(response => {
+          this.album = response.data;
+          this.loading = false;
+        })
+        .catch(e => {
+          this.errors.push(e)
+        })
+    }
   }
-  }
-
+}
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #app {
   background-color: #f7f7f7;
@@ -105,6 +125,19 @@ export default {
   position: relative;
 }
 
+.notOnSpotify {
+  width: 20rem;
+  height: 20rem;
+  background-image: linear-gradient(rgba(0, 0, 0, .6), #121212);
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 20rem;
+  letter-spacing: normal;
+  text-align: center;
+  text-transform: none;
+}
+
 .scoreBox {
   position: relative;
   min-height: 1px;
@@ -126,5 +159,10 @@ export default {
   color: black;
   font-size: 3rem;
   font-weight: 700;
+}
+
+.spinnerContainer {
+  padding-left: 50%;
+  align-items: center;
 }
 </style>
