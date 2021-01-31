@@ -43,13 +43,13 @@ export default {
   },
   created() {
     setTimeout(() => {
-      this.getAlbum()
+      this.getAlbum();
     }, 2000);
   },
 
   methods: {
     getAlbum: function() {
-      axios.get('https://localhost:44371/albums/suggestion?maxYear=2011&minYear=2013&minScore=85')
+      axios.get('https://albumrecommendationswebapi20210130224025.azurewebsites.net/albums/suggestion?maxYear=2010&minYear=2020&minScore=85')
         .then(response => {
           this.album = response.data;
           this.loading = false;
