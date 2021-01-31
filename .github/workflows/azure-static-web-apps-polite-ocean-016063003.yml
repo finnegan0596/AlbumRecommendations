@@ -23,10 +23,10 @@ jobs:
         uses: bluwy/substitute-string-action@v1
         id: sub
         with:
-          _inpute-file: './AlbumRecommendations.WebApp/.env'
+          _input-file: 'AlbumRecommendations.WebApp/.env'
           _format-key: '{{key}}' 
           location: ${{ secrets.APIURL }}
-          _output-file: './AlbumRecommendations.WebApp/.env' 
+          _output-file: 'AlbumRecommendations.WebApp/.env' 
           
       - name: Build And Deploy
         id: builddeploy
