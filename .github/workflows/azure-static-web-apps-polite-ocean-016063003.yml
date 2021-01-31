@@ -24,7 +24,7 @@ jobs:
         id: updateEnv
         with:
           _inpute-file: 'AlbumRecommendations.WebApp/.env'
-          VUE_APP_API_URL={{sample}}: "VUE_APP_API_URL=${{ secrets.APIURL }}"
+          VUE_APP_API_URL={{location}}: "VUE_APP_API_URL=${{ secrets.APIURL }}"
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v0.0.1-preview
