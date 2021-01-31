@@ -38,7 +38,8 @@ export default {
     return {
       album: null,
       loading: true,
-      errors: []
+      errors: [],
+      apiUrl: process.env.VUE_APP_API_URL
 
     }
   },
@@ -48,14 +49,14 @@ export default {
 
   methods: {
     getAlbum: function() {
-      axios.get('https://albumrecommendationswebapi20210130224025.azurewebsites.net/albums/suggestion?maxYear=2011&minYear=2013&minScore=85')
-        .then(response => {
-          this.album = response.data;
-          this.loading = false;
-        })
-        .catch(e => {
-          this.errors.push(e)
-        })
+      axios.get(this.apiUrl + '/albums/suggestion?maxYear=2011&minYear=2013&minScore=85')
+           .then(response => {
+                  this.album = response.data;
+                  this.loading = false;
+                })
+           .catch(e => {
+             this.errors.push(e)
+           })
     }
   }
 }
