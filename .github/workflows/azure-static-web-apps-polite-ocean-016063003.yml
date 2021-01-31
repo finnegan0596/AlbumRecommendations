@@ -27,9 +27,6 @@ jobs:
           _format-key: '{{key}}' 
           location: ${{ secrets.APIURL }}
           _output-file: 'AlbumRecommendations.WebApp/.env' 
-          
-      - run: echo ${{ secrets.APIURL }}    
-      - run: echo ${{ steps.sub.outputs.result }}
         
       - name: Build And Deploy
         id: builddeploy
