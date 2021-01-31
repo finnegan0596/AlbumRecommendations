@@ -44,7 +44,7 @@ namespace AlbumScraper.Scrapers
                         Genre = genre,
                         Score = Int32.Parse(score),
                         Year = year,
-                        SpotifyUrl = spotifyUrl?.Replace("http://open.spotify.com/album/", "http://open.spotify.com/embed/album/") // bit hacky :(
+                        SpotifyUrl = spotifyUrl?.Replace("http://open.spotify.com/album/", "https://open.spotify.com/embed/album/") // bit hacky :(
                     });
                 }
 
