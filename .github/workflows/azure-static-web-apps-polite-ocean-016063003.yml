@@ -19,9 +19,9 @@ jobs:
         with:
           submodules: true
       
-      - name: Update .env
-        uses: bluwy/substitute-string-action@v1;
-        id: updateEnv
+      - name: Substitute String
+        uses: bluwy/substitute-string-action@v1
+        id: sub
         with:
           _inpute-file: 'AlbumRecommendations.WebApp/.env'
           VUE_APP_API_URL={{location}}: "VUE_APP_API_URL=${{ secrets.APIURL }}"
