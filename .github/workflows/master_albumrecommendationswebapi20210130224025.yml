@@ -20,12 +20,12 @@ jobs:
       with:
         dotnet-version: '5.0.x'
 
-    - name: Variable Substitution appsettings file for tests
+    - name: Variable Substitution appsettings file
       uses: microsoft/variable-substitution@v1
       with:
-        files: 'appsettings.json'
+        files: 'AlbumRecommendations.WebApi/appsettings.json'
       env:
-        AppSettings.PermittedCorsUrls: "${{ secrets.CLIENTURLS }}"
+        PermittedCorsUrls: "${{ secrets.CLIENTURLS }}"
 
     - name: Build with dotnet
       run: dotnet build --configuration Release
