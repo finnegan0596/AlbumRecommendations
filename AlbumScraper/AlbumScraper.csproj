@@ -12,8 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AlbumScraper.Common\AlbumRecommendations.Common.csproj" />
-    <ProjectReference Include="..\AlbumScraper.Models\AlbumRecommendations.Models.csproj" />
+    <ProjectReference Include="..\AlbumRecommendations.Common\AlbumRecommendations.Common.csproj" />
+    <ProjectReference Include="..\AlbumRecommendations.Models\AlbumRecommendations.Models.csproj" />
   </ItemGroup>
 
 </Project>

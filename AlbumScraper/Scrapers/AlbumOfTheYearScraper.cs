@@ -1,5 +1,5 @@
-﻿using AlbumScraper.Common.Extensions;
-using AlbumScraper.Models;
+﻿using AlbumRecommendations.Common.Extensions;
+using AlbumRecommendations.Models;
 using HtmlAgilityPack;
 using System;
 using System.Collections.Generic;
@@ -37,7 +37,7 @@ namespace AlbumScraper.Scrapers
 
                     results.Add(new Album
                     {
-                        Id = (year * 100000) + rank, 
+                        Id = (year * 100000) + rank,
                         Rank = rank,
                         Artist = splitArtistAndTitle.First(),
                         Title = splitArtistAndTitle.Skip(1).First(),

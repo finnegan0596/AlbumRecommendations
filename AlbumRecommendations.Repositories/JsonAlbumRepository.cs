@@ -1,6 +1,6 @@
-﻿using AlbumRecommendations.Repositories.Contracts;
-using AlbumRecommendations.Common.Extensions;
+﻿using AlbumRecommendations.Common.Extensions;
 using AlbumRecommendations.Models;
+using AlbumRecommendations.Repositories.Contracts;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
@@ -53,7 +53,6 @@ namespace AlbumRecommendations.Repositories
                 results = results.Where(r => r.Score >= minScore);
             if (maxScore.HasValue)
                 results = results.Where(r => r.Score <= maxScore);
-
 
             return results?.Random();
         }

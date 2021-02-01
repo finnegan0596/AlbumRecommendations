@@ -1,5 +1,5 @@
-﻿using AlbumRecommendations.Repositories.Contracts;
-using AlbumRecommendations.Models;
+﻿using AlbumRecommendations.Models;
+using AlbumRecommendations.Repositories.Contracts;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
