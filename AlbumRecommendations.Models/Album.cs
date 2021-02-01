@@ -1,4 +1,4 @@
-﻿namespace AlbumScraper.Models
+﻿namespace AlbumRecommendations.Models
 {
     public class Album
     {

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AlbumScraper.Common.Extensions
+namespace AlbumRecommendations.Common.Extensions
 {
     public static class IEnumerableExtensions
     {

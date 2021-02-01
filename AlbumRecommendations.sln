@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlbumScraper", "AlbumScraper\AlbumScraper.csproj", "{FDA877C1-0C69-4D23-8AF3-F42AF5D57030}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlbumRecommendations.Models", "AlbumScraper.Models\AlbumRecommendations.Models.csproj", "{26ED15FB-EA56-4568-B4C9-40FC7D6EDDCC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlbumRecommendations.Models", "AlbumRecommendations.Models\AlbumRecommendations.Models.csproj", "{26ED15FB-EA56-4568-B4C9-40FC7D6EDDCC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlbumRecommendations.Common", "AlbumScraper.Common\AlbumRecommendations.Common.csproj", "{5001426A-4146-43E3-81AA-49E5DB1EA94E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlbumRecommendations.Common", "AlbumRecommendations.Common\AlbumRecommendations.Common.csproj", "{5001426A-4146-43E3-81AA-49E5DB1EA94E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlbumRecommendations.WebApi", "AlbumRecommendations.WebApi\AlbumRecommendations.WebApi.csproj", "{4E0297E3-2729-4ABC-B1C4-19C3D7FAA7E5}"
 EndProject

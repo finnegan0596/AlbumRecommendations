@@ -1,4 +1,4 @@
-﻿using AlbumScraper.Models;
+﻿using AlbumRecommendations.Models;
 using System.Collections.Generic;
 
 namespace AlbumRecommendations.Repositories.Contracts

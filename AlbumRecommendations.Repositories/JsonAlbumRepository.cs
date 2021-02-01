@@ -1,6 +1,6 @@
 ﻿using AlbumRecommendations.Repositories.Contracts;
-using AlbumScraper.Common.Extensions;
-using AlbumScraper.Models;
+using AlbumRecommendations.Common.Extensions;
+using AlbumRecommendations.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
