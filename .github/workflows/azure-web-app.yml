@@ -1,5 +1,4 @@
-name: Azure Web Apps CI/CD
-
+name: Build and Deploy WebApp
 on:
   push:
     branches:
