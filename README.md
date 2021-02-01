@@ -1,7 +1,6 @@
 # AlbumRecommendations
 ## Description
 * Recommends an album released between 2010-2019 that Pitchfork has given a score of 8.5 or higher. Album is recommended on page load. Album data scraped from albumoftheyear.org. 
-* Album data is currently stored in 
 
 ## Issues
 * Has only been tested on Chrome. 
