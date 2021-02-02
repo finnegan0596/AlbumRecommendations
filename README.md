@@ -10,6 +10,7 @@
 ## Links 
 * Website - https://polite-ocean-016063003.azurestaticapps.net/
 * Api - https://albumrecommendationswebapi20210130224025.azurewebsites.net/
+  * Swagger - https://albumrecommendationswebapi20210130224025.azurewebsites.net/swagger
   * Api can be accessed but attempts to use it in a new client will be blocked by CORS policy  
 
 ## Future features
